@@ -1,0 +1,11 @@
+<h1 class="text-center">Add a 🍸</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name, placeholder: "Pick your poison" %>
+        <%= f.submit "Add", class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>

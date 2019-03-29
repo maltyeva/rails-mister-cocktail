@@ -1,0 +1,13 @@
+<h1>Welcome to my cocktail app</h1>
+<%= simple_form_for :search, url: :ingredients_cocktails, method: :get do |f| %>
+  <%= f.input :ingredient, collection: Ingredient.all %>
+  <%= f.submit "Search" %>
+<% end %>
+<% @cocktails.each do |cocktail| %>
+  <p><%= link_to cocktail.name, cocktail_path(cocktail) %>
+    <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Delete?"} do  %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </p>
+<% end %>
+<p><%= link_to "Add a new drink!", new_cocktail_path  %></p>

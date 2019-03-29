@@ -1,0 +1,7 @@
+<% @cocktails.each do |cocktail| %>
+  <p><%= link_to cocktail.name, cocktail_path(cocktail) %>
+    <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: "Delete?"} do  %>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </p>
+<% end %>
